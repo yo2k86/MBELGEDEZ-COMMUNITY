@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mbelgedez Community ñ AI Editing & Creative Engineering</title>
-  <link rel="icon" type="image/png" href="logo.png">
+  <title>Mbelgedez Community ‚Äì AI Editing & Creative Engineering</title>
+  <!-- Menggunakan FontAwesome untuk ikon agar tidak broken image -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body {
@@ -13,7 +14,7 @@
       display:flex; justify-content:center; align-items:center;
     }
     .container {
-      max-width:900px; background:rgba(10,10,10,0.6);
+      max-width:900px; width: 100%; background:rgba(10,10,10,0.6);
       border:1px solid rgba(255,165,0,0.4); border-radius:20px;
       padding:40px; box-shadow:0 0 25px rgba(255,165,0,0.3);
       backdrop-filter:blur(8px); text-align:center; animation:fadeIn 1s ease-in-out;
@@ -22,75 +23,131 @@
       from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}
     }
     h1 { font-size:2.2em; color:#ffa500; text-shadow:0 0 15px #ff7b00,0 0 30px #ff6600; margin-bottom:15px; }
-    h2 { color:#ffb84d; margin-top:30px; margin-bottom:10px; border-bottom:1px solid rgba(255,165,0,0.4); padding-bottom:5px; display:inline-block; }
+    h2 { color:#ffb84d; margin-top:30px; margin-bottom:15px; border-bottom:1px solid rgba(255,165,0,0.4); padding-bottom:5px; display:inline-block; font-size: 1.5em; }
     p { margin:10px 0; line-height:1.6; color:#ddd; }
-    ul { list-style:none; margin:15px 0; text-align:left; display:inline-block; }
-    ul li::before { content:"ï "; color:#ffa500; margin-right:6px; }
+    
+    /* List styling updated for better alignment */
+    ul { list-style:none; margin:15px 0; text-align:left; display:inline-block; max-width: 100%; }
+    ul li { margin-bottom: 8px; }
+    ul li::before { content:"‚Ä¢ "; color:#ffa500; margin-right:6px; font-weight: bold; }
+    
     a { color:#ffa500; text-decoration:none; transition:0.3s; }
     a:hover { color:#fff; text-shadow:0 0 8px #ffa500; }
+    
     .button {
       display:inline-block; background:linear-gradient(90deg,#ff7b00,#ffb84d);
-      color:#000; font-weight:bold; padding:10px 22px; border-radius:8px;
-      margin-top:15px; transition:0.3s; text-transform:uppercase; box-shadow:0 0 15px #ff7b00;
+      color:#000; font-weight:bold; padding:12px 25px; border-radius:8px;
+      margin-top:20px; transition:0.3s; text-transform:uppercase; box-shadow:0 0 15px #ff7b00;
+      text-decoration: none;
     }
-    .button:hover { background:#fff; color:#ff7b00; box-shadow:0 0 25px #ffb84d; }
-    .admins { margin-top:20px; text-align:left; display:inline-block; }
-    .admins p { color:#ffa; font-size:0.95em; margin:4px 0; }
-    .profile { width:100px; height:100px; border-radius:50%; border:2px solid #ffa500; box-shadow:0 0 20px #ff7b00; margin-bottom:20px; }
-    .social-icons { margin-top:15px; }
-    .social-icons a { display:inline-block; margin:0 10px; }
-    .social-icons img { width:32px; height:32px; transition:0.3s; }
-    .social-icons img:hover { transform:scale(1.1); }
-    footer { margin-top:40px; font-size:0.9em; color:#777; }
+    .button:hover { background:#fff; color:#ff7b00; box-shadow:0 0 25px #ffb84d; transform: scale(1.05); }
+    
+    .admins { margin-top:20px; text-align:left; display:inline-block; background: rgba(255, 165, 0, 0.05); padding: 15px; border-radius: 10px; border: 1px solid rgba(255, 165, 0, 0.2); }
+    .admins p { color:#ffa; font-size:0.95em; margin:8px 0; display: flex; align-items: center; }
+    .admins i { margin-right: 8px; color: #25D366; font-size: 1.2em; }
+    
+    .profile { 
+      width:100px; height:100px; border-radius:50%; 
+      border:3px solid #ffa500; box-shadow:0 0 20px #ff7b00; margin-bottom:20px; 
+      object-fit: cover;
+    }
+    
+    .social-icons { margin-top:25px; }
+    .social-icons a { 
+      display:inline-flex; justify-content: center; align-items: center;
+      width: 45px; height: 45px; margin:0 10px; 
+      border-radius: 50%; background: rgba(255,255,255,0.1);
+      transition:0.3s; font-size: 24px;
+    }
+    .social-icons a:hover { transform:scale(1.1); background: #ffa500; color: #000; text-shadow: none; }
+    
+    .copy-btn {
+      background: transparent; border: 1px solid #ffa500; color: #ffa500;
+      cursor: pointer; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-left: 10px;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { background: #ffa500; color: #000; }
+    .copy-btn:active { transform: scale(0.95); }
+
+    footer { margin-top:40px; font-size:0.9em; color:#777; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .container { padding: 20px; }
+      h1 { font-size: 1.8em; }
+    }
   </style>
+  <script>
+    function copyToClipboard(text) {
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      alert('Nomor rekening berhasil disalin: ' + text);
+    }
+  </script>
 </head>
 <body>
   <div class="container">
-    <img src="foto-profil.png" alt="Foto Profil" class="profile">
+    <!-- Menggunakan placeholder avatar yang sesuai tema -->
+    <img src="https://ui-avatars.com/api/?name=MC&background=ffa500&color=000&size=200" alt="Foto Profil" class="profile">
+    
     <h1>Mbelgedez Community</h1>
     <p><strong>AI Editing & Creative Engineering</strong></p>
     <p><strong>Mbelgedez Community</strong> adalah wadah kreatif bagi para kreator digital untuk berkolaborasi dan bereksperimen dengan <strong>AI Editing</strong> serta <strong>Prompt Engineering</strong>, menciptakan karya inovatif dan visioner.</p>
 
     <h2>Kategori Akses</h2>
     <ul>
-      <li><b>Free Access</b> ñ Jelajahi fitur dasar dan uji coba tools AI.</li>
-      <li><b>VVIP Class</b> ñ Nikmati fitur premium, pembaruan eksklusif, dan dukungan prioritas dari tim Mbelgedez.</li>
+      <li><b>Free Access</b> ‚Äì Jelajahi fitur dasar dan uji coba tools AI.</li>
+      <li><b>VVIP Class</b> ‚Äì Nikmati fitur premium, pembaruan eksklusif, dan dukungan prioritas dari tim Mbelgedez.</li>
     </ul>
 
-    <p>? Bersama komunitas Mbelgedez, ubah imajinasi jadi karya nyata dengan kekuatan kecerdasan buatan.</p>
+    <p>üöÄ Bersama komunitas Mbelgedez, ubah imajinasi jadi karya nyata dengan kekuatan kecerdasan buatan.</p>
 
     <h2>Langganan & Dukungan</h2>
     <ul>
       <li><a href="https://www.facebook.com/61556333717173/subscribe/" target="_blank"><b>Langganan Facebook</b></a></li>
-      <li><b>Transfer Manual (BCA):</b> Rekening: <b>32517179941</b>, Atas Nama: <i>Yoyok Eko Rahardjo</i></li>
+      <li>
+        <b>Transfer Manual (BCA):</b><br>
+        Rekening: <b id="rek-bca" style="color:#fff; font-size:1.1em;">3251719941</b>
+        <button class="copy-btn" onclick="copyToClipboard('3251719941')"><i class="fas fa-copy"></i> Salin</button><br>
+        Atas Nama: <i>Yoyok Eko Rahardjo</i>
+      </li>
     </ul>
 
     <h2>Catatan Penting</h2>
-    <p>?? Akses ke <b>Tools VIP Class</b> hanya berlaku selama masa langganan aktif.<br>
+    <p>‚ö†Ô∏è Akses ke <b>Tools VIP Class</b> hanya berlaku selama masa langganan aktif.<br>
        Pastikan selalu memperbarui langganan agar tidak kehilangan akses ke fitur premium dan pembaruan terbaru.</p>
 
+    <h2>Hubungi Admin</h2>
     <div class="admins">
-      <p>ï <a href="https://wa.me/6281274038300" target="_blank"><img src="whatsapp.png" alt="WhatsApp" style="width:16px;vertical-align:middle;margin-right:5px;"> Wiwik Aspriyati</a></p>
-      <p>ï <a href="https://wa.me/6282324865269" target="_blank"><img src="whatsapp.png" alt="WhatsApp" style="width:16px;vertical-align:middle;margin-right:5px;"> Novika Yunita Sari</a></p>
-      <p>ï <a href="https://wa.me/6285799231560" target="_blank"><img src="whatsapp.png" alt="WhatsApp" style="width:16px;vertical-align:middle;margin-right:5px;"> Naomy</a></p>
-      <p>ï <a href="https://wa.me/6281358494288" target="_blank"><img src="whatsapp.png" alt="WhatsApp" style="width:16px;vertical-align:middle;margin-right:5px;"> Miss Purniwati</a></p>
+      <p>‚Ä¢ <a href="https://wa.me/6281274038300" target="_blank"><i class="fab fa-whatsapp"></i> Wiwik Aspriyati</a></p>
+      <p>‚Ä¢ <a href="https://wa.me/6282324865269" target="_blank"><i class="fab fa-whatsapp"></i> Novika Yunita Sari</a></p>
+      <p>‚Ä¢ <a href="https://wa.me/6285799231560" target="_blank"><i class="fab fa-whatsapp"></i> Naomy</a></p>
+      <p>‚Ä¢ <a href="https://wa.me/6281358494288" target="_blank"><i class="fab fa-whatsapp"></i> Miss Purniwati</a></p>
     </div>
 
-    <h2>Bergabung Bersama Komunitas</h2>
-    <p>Gabung langsung dengan komunitas Mbelgedez di WhatsApp:</p>
-    <a href="https://chat.whatsapp.com/DNNhtDqZO6CHNRJbiUiTaF" class="button" target="_blank">Join WhatsApp Community</a>
+    <div style="margin-top: 30px;">
+      <h2>Bergabung Bersama Komunitas</h2>
+      <p>Gabung langsung dengan komunitas Mbelgedez di WhatsApp:</p>
+      <a href="https://chat.whatsapp.com/DNNhtDqZO6CHNRJbiUiTaF" class="button" target="_blank">
+        <i class="fab fa-whatsapp" style="margin-right:5px;"></i> Join WhatsApp Community
+      </a>
+    </div>
 
     <div class="social-icons">
-      <a href="https://www.facebook.com/share/17bpzYPQnd/?mibextid=wwXIfr" target="_blank">
-        <img src="facebook.png" alt="Facebook Profile">
+      <a href="https://www.facebook.com/share/17bpzYPQnd/?mibextid=wwXIfr" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="https://wa.me/6281274038300" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp">
+      <a href="https://wa.me/6281274038300" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
       </a>
     </div>
 
     <footer>
-      <p>© 2025 Mbelgedez Community. All Rights Reserved.</p>
+      <p>¬© 2025 Mbelgedez Community. All Rights Reserved.</p>
     </footer>
   </div>
 </body>
