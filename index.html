@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mbelgedez Community – AI Editing & Creative Engineering</title>
-  <!-- Menggunakan FontAwesome untuk ikon agar tidak broken image -->
+  <!-- Link Icon dikembalikan ke logo.png -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <!-- FontAwesome tetap saya simpan untuk tombol copy, tapi logo utama kembali ke gambar -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -26,7 +28,7 @@
     h2 { color:#ffb84d; margin-top:30px; margin-bottom:15px; border-bottom:1px solid rgba(255,165,0,0.4); padding-bottom:5px; display:inline-block; font-size: 1.5em; }
     p { margin:10px 0; line-height:1.6; color:#ddd; }
     
-    /* List styling updated for better alignment */
+    /* List styling */
     ul { list-style:none; margin:15px 0; text-align:left; display:inline-block; max-width: 100%; }
     ul li { margin-bottom: 8px; }
     ul li::before { content:"• "; color:#ffa500; margin-right:6px; font-weight: bold; }
@@ -44,7 +46,9 @@
     
     .admins { margin-top:20px; text-align:left; display:inline-block; background: rgba(255, 165, 0, 0.05); padding: 15px; border-radius: 10px; border: 1px solid rgba(255, 165, 0, 0.2); }
     .admins p { color:#ffa; font-size:0.95em; margin:8px 0; display: flex; align-items: center; }
-    .admins i { margin-right: 8px; color: #25D366; font-size: 1.2em; }
+    
+    /* Style untuk icon gambar di list admin */
+    .admins img { width:16px; height:16px; margin-right: 8px; vertical-align: middle; }
     
     .profile { 
       width:100px; height:100px; border-radius:50%; 
@@ -54,12 +58,13 @@
     
     .social-icons { margin-top:25px; }
     .social-icons a { 
-      display:inline-flex; justify-content: center; align-items: center;
-      width: 45px; height: 45px; margin:0 10px; 
-      border-radius: 50%; background: rgba(255,255,255,0.1);
-      transition:0.3s; font-size: 24px;
+      display:inline-block; margin:0 10px;
     }
-    .social-icons a:hover { transform:scale(1.1); background: #ffa500; color: #000; text-shadow: none; }
+    .social-icons img { 
+      width:40px; height:40px; transition:0.3s; 
+      filter: drop-shadow(0 0 5px rgba(255,165,0,0.5));
+    }
+    .social-icons img:hover { transform:scale(1.1); filter: drop-shadow(0 0 10px rgba(255,165,0,0.8)); }
     
     .copy-btn {
       background: transparent; border: 1px solid #ffa500; color: #ffa500;
@@ -71,7 +76,6 @@
 
     footer { margin-top:40px; font-size:0.9em; color:#777; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
-    /* Responsive adjustments */
     @media (max-width: 600px) {
       .container { padding: 20px; }
       h1 { font-size: 1.8em; }
@@ -91,8 +95,8 @@
 </head>
 <body>
   <div class="container">
-    <!-- Menggunakan placeholder avatar yang sesuai tema -->
-    <img src="https://ui-avatars.com/api/?name=MC&background=ffa500&color=000&size=200" alt="Foto Profil" class="profile">
+    <!-- Dikembalikan ke foto-profil.png -->
+    <img src="foto-profil.png" alt="Foto Profil" class="profile">
     
     <h1>Mbelgedez Community</h1>
     <p><strong>AI Editing & Creative Engineering</strong></p>
@@ -123,26 +127,28 @@
 
     <h2>Hubungi Admin</h2>
     <div class="admins">
-      <p>• <a href="https://wa.me/6281274038300" target="_blank"><i class="fab fa-whatsapp"></i> Wiwik Aspriyati</a></p>
-      <p>• <a href="https://wa.me/6282324865269" target="_blank"><i class="fab fa-whatsapp"></i> Novika Yunita Sari</a></p>
-      <p>• <a href="https://wa.me/6285799231560" target="_blank"><i class="fab fa-whatsapp"></i> Naomy</a></p>
-      <p>• <a href="https://wa.me/6281358494288" target="_blank"><i class="fab fa-whatsapp"></i> Miss Purniwati</a></p>
+      <!-- Icon dikembalikan ke whatsapp.png -->
+      <p>• <a href="https://wa.me/6281274038300" target="_blank"><img src="whatsapp.png" alt="WA"> Wiwik Aspriyati</a></p>
+      <p>• <a href="https://wa.me/6282324865269" target="_blank"><img src="whatsapp.png" alt="WA"> Novika Yunita Sari</a></p>
+      <p>• <a href="https://wa.me/6285799231560" target="_blank"><img src="whatsapp.png" alt="WA"> Naomy</a></p>
+      <p>• <a href="https://wa.me/6281358494288" target="_blank"><img src="whatsapp.png" alt="WA"> Miss Purniwati</a></p>
     </div>
 
     <div style="margin-top: 30px;">
       <h2>Bergabung Bersama Komunitas</h2>
       <p>Gabung langsung dengan komunitas Mbelgedez di WhatsApp:</p>
       <a href="https://chat.whatsapp.com/DNNhtDqZO6CHNRJbiUiTaF" class="button" target="_blank">
-        <i class="fab fa-whatsapp" style="margin-right:5px;"></i> Join WhatsApp Community
+        Join WhatsApp Community
       </a>
     </div>
 
     <div class="social-icons">
+      <!-- Icon dikembalikan ke facebook.png dan whatsapp.png -->
       <a href="https://www.facebook.com/share/17bpzYPQnd/?mibextid=wwXIfr" target="_blank" title="Facebook">
-        <i class="fab fa-facebook-f"></i>
+        <img src="facebook.png" alt="Facebook Profile">
       </a>
       <a href="https://wa.me/6281274038300" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <img src="whatsapp.png" alt="WhatsApp">
       </a>
     </div>
 
