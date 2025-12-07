@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mbelgedez Community – AI Editing & Creative Engineering</title>
-  <!-- Link Icon dikembalikan ke logo.png -->
+  <!-- Ikon Tab Browser -->
   <link rel="icon" type="image/png" href="logo.png">
-  <!-- FontAwesome tetap saya simpan untuk tombol copy, tapi logo utama kembali ke gambar -->
+  <!-- FontAwesome untuk ikon tombol copy -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body {
-      background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #000 100%);
+      /* BACKGROUND DIGANTI KE FILE LOKAL: foto-background.png */
+      /* Linear-gradient digunakan agar teks tetap terbaca di atas gambar */
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('foto-background.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color:#fff; min-height:100vh; padding:40px 20px;
       display:flex; justify-content:center; align-items:center;
     }
     .container {
-      max-width:900px; width: 100%; background:rgba(10,10,10,0.6);
+      max-width:900px; width: 100%; 
+      /* Background dibuat lebih transparan (0.15) agar background terlihat jelas */
+      background:rgba(0, 0, 0, 0.15);
       border:1px solid rgba(255,165,0,0.4); border-radius:20px;
       padding:40px; box-shadow:0 0 25px rgba(255,165,0,0.3);
       backdrop-filter:blur(8px); text-align:center; animation:fadeIn 1s ease-in-out;
@@ -95,7 +102,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- Dikembalikan ke foto-profil.png -->
     <img src="foto-profil.png" alt="Foto Profil" class="profile">
     
     <h1>Mbelgedez Community</h1>
@@ -127,7 +133,6 @@
 
     <h2>Hubungi Admin</h2>
     <div class="admins">
-      <!-- Icon dikembalikan ke whatsapp.png -->
       <p>• <a href="https://wa.me/6281274038300" target="_blank"><img src="whatsapp.png" alt="WA"> Wiwik Aspriyati</a></p>
       <p>• <a href="https://wa.me/6282324865269" target="_blank"><img src="whatsapp.png" alt="WA"> Novika Yunita Sari</a></p>
       <p>• <a href="https://wa.me/6285799231560" target="_blank"><img src="whatsapp.png" alt="WA"> Naomy</a></p>
@@ -143,7 +148,6 @@
     </div>
 
     <div class="social-icons">
-      <!-- Icon dikembalikan ke facebook.png dan whatsapp.png -->
       <a href="https://www.facebook.com/share/17bpzYPQnd/?mibextid=wwXIfr" target="_blank" title="Facebook">
         <img src="facebook.png" alt="Facebook Profile">
       </a>
